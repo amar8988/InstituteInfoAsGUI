@@ -5,6 +5,6 @@ import javax.swing.JOptionPane;
 
 public class LoginDialog {
 	public static void passwordDialog(JFrame frame) {
-		JOptionPane.showMessageDialog(frame, "login failed. Re-enter!!!");
+		JOptionPane.showMessageDialog(frame, "login failed. Re-try!!!");
 	}
 }
