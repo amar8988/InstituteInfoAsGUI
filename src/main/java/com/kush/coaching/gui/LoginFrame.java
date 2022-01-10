@@ -42,7 +42,7 @@ public class LoginFrame {
 	private void initialize() {
 		frmPleaseSignin = new JFrame();
 		frmPleaseSignin.getContentPane().setBackground(Color.PINK);
-		frmPleaseSignin.setTitle("Please sign-in");
+		//frmPleaseSignin.setTitle("Please sign-in");
 		frmPleaseSignin.setBounds(100, 100, 353, 207);
 		frmPleaseSignin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmPleaseSignin.getContentPane().setLayout(null);
@@ -79,8 +79,11 @@ public class LoginFrame {
 				passwordDB = new LoginData().meth(userName);
 				
 				if(passwordDB != null) {
-					if(!(password.equals(passwordDB))) 
+					if(!(password.equals(passwordDB))) {
 						LoginDialog.passwordDialog(frmPleaseSignin);
+						textField.setText(null);
+						passwordField.setText(null);
+					}
 					else
 						System.out.println("Login userId- "+userName+", password- "+ password);
 				}
