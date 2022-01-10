@@ -1,10 +1,9 @@
 package com.kush.coaching.repository;
 
-import java.util.Optional;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 import com.kush.coaching.entity.User;
 
-public interface UserRepository extends JpaRepository<User, String> {
-	Optional<User> findByUserName(String userName);
+public interface UserRepository extends CrudRepository<User, String> {
+	 //Optional<User> findById(userName);    is pre-defined by jpa is used
 }
