@@ -4,6 +4,9 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.kush.coaching.entity.User;
 
-public interface UserRepository extends CrudRepository<User, String> {
-	 //Optional<User> findById(userName);    is pre-defined by jpa is used
+public interface UserRepository extends CrudRepository<User, Integer> {
+	/* pre-defined methods by jpa are:
+	 * 	List<User> findAll();
+	 * 	Optional<User> findById(id);
+	 * 	... */
 }

@@ -8,11 +8,11 @@ public class LoginData {
 	@Autowired
 	private UserRepository userRepository;
 	
-	public String meth(String userName) {
+	public String meth(int id) {
 		String pwd="";
 		
 		try {
-			pwd = userRepository.findById(userName).get().getPassword();
+			pwd = userRepository.findById(id).get().getPassword();
 		}catch(Exception e) {
 			e.getMessage();
 		}
