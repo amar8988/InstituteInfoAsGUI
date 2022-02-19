@@ -1,11 +1,13 @@
 package com.kush.coaching.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class StudentDetail {
@@ -20,6 +22,8 @@ public class StudentDetail {
 	private String course;
 	private String batch;
 	private String status;	//continue or left
+	@OneToMany
+	private List<Date> payments;
 	
 	public StudentDetail() {
 	}
@@ -96,10 +100,18 @@ public class StudentDetail {
 		this.status = status;
 	}
 
+	public List<Date> getPayments() {
+		return payments;
+	}
+
+	public void setPayments(List<Date> payments) {
+		this.payments = payments;
+	}
+
 	@Override
 	public String toString() {
 		return "StudentDetail [id=" + id + ", studentName=" + studentName + ", fatherName=" + fatherName
 				+ ", contactNumber=" + contactNumber + ", joiningDate=" + joiningDate + ", startingDate=" + startingDate
-				+ ", course=" + course + ", batch=" + batch + ", status=" + status + "]";
+				+ ", course=" + course + ", batch=" + batch + ", status=" + status + ", payments=" + payments + "]";
 	}
 }
