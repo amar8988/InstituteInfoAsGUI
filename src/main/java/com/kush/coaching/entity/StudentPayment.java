@@ -1,7 +1,6 @@
 package com.kush.coaching.entity;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,7 +9,7 @@ import javax.persistence.Id;
 public class StudentPayment {
 	@Id
 	private int id;
-	private List<Date> paidDates;
+	private Date paidDate;
 	
 	public StudentPayment() {
 	}
@@ -23,16 +22,16 @@ public class StudentPayment {
 		this.id = id;
 	}
 
-	public List<Date> getPaidDates() {
-		return paidDates;
+	public Date getPaidDate() {
+		return paidDate;
 	}
 
-	public void setPaidDates(List<Date> paidDates) {
-		this.paidDates = paidDates;
+	public void setPaidDates(Date paidDate) {
+		this.paidDate = paidDate;
 	}
 
 	@Override
 	public String toString() {
-		return "StudentPayment [id=" + id + ", paidDates=" + paidDates + "]";
+		return "StudentPayment [id=" + id + ", paidDates=" + paidDate + "]";
 	}
 }
