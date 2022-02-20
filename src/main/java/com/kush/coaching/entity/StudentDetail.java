@@ -3,11 +3,14 @@ package com.kush.coaching.entity;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
 
 @Entity
 public class StudentDetail {
@@ -22,8 +25,11 @@ public class StudentDetail {
 	private String course;
 	private String batch;
 	private String status;	//continue or left
-	@OneToMany
-	private List<Date> payments;
+	@ElementCollection
+	@CollectionTable(name="pay_list",joinColumns=@JoinColumn(name=
+	  "student_id"))
+	@Column(name="pay_date")
+	private List<Date> payDates;
 	
 	public StudentDetail() {
 	}
@@ -100,18 +106,18 @@ public class StudentDetail {
 		this.status = status;
 	}
 
-	public List<Date> getPayments() {
-		return payments;
+	public List<Date> getPayDates() {
+		return payDates;
 	}
 
-	public void setPayments(List<Date> payments) {
-		this.payments = payments;
+	public void setPayDates(List<Date> payDates) {
+		this.payDates = payDates;
 	}
 
 	@Override
 	public String toString() {
 		return "StudentDetail [id=" + id + ", studentName=" + studentName + ", fatherName=" + fatherName
 				+ ", contactNumber=" + contactNumber + ", joiningDate=" + joiningDate + ", startingDate=" + startingDate
-				+ ", course=" + course + ", batch=" + batch + ", status=" + status + ", payments=" + payments + "]";
+				+ ", course=" + course + ", batch=" + batch + ", status=" + status + ", payDates=" + payDates + "]";
 	}
 }
