@@ -1,22 +1,20 @@
 package com.kush.coaching.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
+import com.kush.coaching.entity.User;
 import com.kush.coaching.repository.UserRepository;
 
 public class LoginData {
-	@Autowired
-	private UserRepository userRepository;
 	
-	public String meth(int id) {
-		String pwd="";
+	public User meth(int id, UserRepository userRepository) {
+		User user=null;
 		
 		try {
-			pwd = userRepository.findById(id).get().getPassword();
+			user = userRepository.findById(id).get();
 		}catch(Exception e) {
 			e.getMessage();
 		}
 		
-		return pwd;
+		return user;
 	}
 }
