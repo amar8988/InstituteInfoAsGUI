@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.kush.coaching.entity.User;
 import com.kush.coaching.repository.UserRepository;
+import com.kush.coaching.service.LoginData;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -75,10 +76,14 @@ public class LoginFrame extends JFrame {
 				int id=Integer.parseInt(textField.getText());
 				String pwd=passwordField.getText();
 				
-				System.out.println("Entered userId & password: "+id+" & "+pwd);
+				User user = new LoginData().meth(id,repository);
 				
-				User user = repository.findById(id).get();
-				System.out.println("UserId & password from database: "+user.getId()+" & "+user.getPassword());
+				if(!(pwd.equals(user.getPassword()))) {
+						LoginDialog.passwordDialog(new LoginFrame());
+						textField.setText(null);
+						passwordField.setText(null);
+				}
+				
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -86,6 +91,13 @@ public class LoginFrame extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("cancel");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {				
+				  textField.setText(null);
+				  passwordField.setText(null);
+				 
+			}
+		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton_1.setBounds(213, 161, 85, 21);
 		contentPane.add(btnNewButton_1);
