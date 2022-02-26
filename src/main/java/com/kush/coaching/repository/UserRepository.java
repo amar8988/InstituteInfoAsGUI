@@ -1,12 +1,9 @@
 package com.kush.coaching.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 import com.kush.coaching.entity.User;
 
-public interface UserRepository extends JpaRepository<User, Integer> {
-	/* pre-defined methods by jpa are:
-	 * 	List<User> findAll();
-	 * 	Optional<User> findById(id);
-	 * 	... */
+public interface UserRepository extends CrudRepository<User, Integer> {
+	
 }
