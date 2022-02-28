@@ -12,7 +12,7 @@ import com.kush.coaching.repository.UserRepository;
 public class InstInfoAsGuiApplication {
 
 	public static void main(String[] args) {
-		 ConfigurableApplicationContext context = new
+		 ConfigurableApplicationContext context = new												//not required for web applications
 				 SpringApplicationBuilder(InstInfoAsGuiApplication.class) .headless(false)
 				 .run(args);
 		
