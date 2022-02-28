@@ -13,7 +13,7 @@ public class InstInfoAsGuiApplication {
 
 	public static void main(String[] args) {
 		 ConfigurableApplicationContext context = new												//not required for web applications
-				 SpringApplicationBuilder(InstInfoAsGuiApplication.class) .headless(false)
+				 SpringApplicationBuilder(InstInfoAsGuiApplication.class).headless(false)
 				 .run(args);
 		
 		LoginFrame.login((UserRepository) context.getBean(UserRepository.class));
