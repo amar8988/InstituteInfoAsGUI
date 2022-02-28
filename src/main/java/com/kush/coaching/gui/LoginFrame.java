@@ -44,7 +44,7 @@ public class LoginFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginFrame() {
-		setFont(new Font("Arial", Font.BOLD, 8));
+		setFont(new Font("Arial Black", Font.BOLD, 12));
 		setTitle("sign-in");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 453, 241);
