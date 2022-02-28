@@ -24,8 +24,10 @@ public class LoginFrame extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
+	private static UserRepository repository;
 	
 	public static void login(UserRepository userRepository) {
+		repository = userRepository;
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -74,7 +76,7 @@ public class LoginFrame extends JFrame {
 				int id=Integer.parseInt(textField.getText());
 				String pwd=passwordField.getText();
 				
-				User user = new LoginData().meth(id,userRepository);
+				User user = new LoginData().meth(id,repository);
 				
 				if(!(pwd.equals(user.getPassword()))) {
 						LoginDialog.passwordDialog(new LoginFrame());
