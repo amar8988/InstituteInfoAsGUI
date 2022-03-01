@@ -12,9 +12,13 @@ import com.kush.coaching.repository.UserRepository;
 public class InstInfoAsGuiApplication {
 
 	public static void main(String[] args) {
-		 ConfigurableApplicationContext context = new												//not required for web applications
-				 SpringApplicationBuilder(InstInfoAsGuiApplication.class).headless(false)
-				 .run(args);
+		
+		/* SpringApplication.run(InstInfoAsGuiApplication.class, args); */
+		
+		
+		  ConfigurableApplicationContext context = new SpringApplicationBuilder(InstInfoAsGuiApplication.class)
+				  									.headless(false).run(args);			//not required for web applications
+		 
 		
 		LoginFrame.login((UserRepository) context.getBean(UserRepository.class));
 	}
