@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.springframework.context.ConfigurableApplicationContext;
+
 import com.kush.coaching.entity.User;
 import com.kush.coaching.repository.UserRepository;
 import com.kush.coaching.service.LoginData;
@@ -24,10 +26,10 @@ public class LoginFrame extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
-	private static UserRepository repository;
+	private static ConfigurableApplicationContext configContext;
 	
-	public static void login(UserRepository userRepository) {
-		repository = userRepository;
+	public static void login(ConfigurableApplicationContext context) {
+		configContext = context;
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -78,7 +80,7 @@ public class LoginFrame extends JFrame {
 				int id=Integer.parseInt(textField.getText());
 				String pwd=passwordField.getText();
 				
-				User user = new LoginData().meth(id,repository);
+				User user = new LoginData().meth(id,configContext);
 				
 				if(!(pwd.equals(user.getPassword()))) {
 						LoginDialog.passwordDialog(new LoginFrame());
