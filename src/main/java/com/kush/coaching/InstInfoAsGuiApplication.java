@@ -19,6 +19,6 @@ public class InstInfoAsGuiApplication {
 				  									.headless(false).run(args);			//not required for web applications
 		 
 		
-		LoginFrame.login((UserRepository) context.getBean(UserRepository.class));
+		LoginFrame.login(context);
 	}
 }
