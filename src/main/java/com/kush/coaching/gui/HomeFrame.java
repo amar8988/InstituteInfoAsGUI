@@ -55,7 +55,7 @@ public class HomeFrame extends JFrame {
 		
 		List<StudentDetail> students = LoginData.getStudents(configContext);
 		DefaultTableModel model = (DefaultTableModel)table.getModel();
-		//int columns=5;
+		
 		Vector<String> colNames = new Vector<>();
 		colNames.add("Name");
 		colNames.add("Joining_date");
