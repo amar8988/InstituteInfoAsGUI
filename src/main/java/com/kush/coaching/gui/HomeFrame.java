@@ -16,6 +16,8 @@ import com.kush.coaching.service.LoginData;
 
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
+import javax.swing.JButton;
+import java.awt.Font;
 
 public class HomeFrame extends JFrame {
 
@@ -40,7 +42,7 @@ public class HomeFrame extends JFrame {
 
 	public HomeFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1184, 582);
+		setBounds(100, 100, 1184, 509);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -52,6 +54,31 @@ public class HomeFrame extends JFrame {
 		
 		table = new JTable();
 		scrollPane.setViewportView(table);
+		
+		JButton btnNewButton = new JButton("New");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton.setBounds(187, 432, 85, 21);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Detail");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton_1.setBounds(360, 432, 85, 21);
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Leave");
+		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton_2.setBounds(530, 432, 85, 21);
+		contentPane.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("Left");
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton_3.setBounds(728, 432, 85, 21);
+		contentPane.add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("Payments");
+		btnNewButton_4.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnNewButton_4.setBounds(903, 432, 112, 21);
+		contentPane.add(btnNewButton_4);
 		
 		List<StudentDetail> students = LoginData.getStudents(configContext);
 		DefaultTableModel model = (DefaultTableModel)table.getModel();
