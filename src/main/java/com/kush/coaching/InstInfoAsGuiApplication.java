@@ -5,7 +5,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.kush.coaching.gui.LoginFrame;
-import com.kush.coaching.repository.UserRepository;
 
 @SpringBootApplication
 public class InstInfoAsGuiApplication {
