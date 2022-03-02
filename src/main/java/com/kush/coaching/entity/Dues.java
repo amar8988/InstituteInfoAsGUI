@@ -7,7 +7,6 @@ import javax.persistence.Id;
 public class Dues {
 	@Id
 	private int id;
-	private String studentFatherName;
 	private int amount;
 	private String status;		//due or advance
 	
@@ -20,14 +19,6 @@ public class Dues {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getStudentFatherName() {
-		return studentFatherName;
-	}
-
-	public void setStudentFatherName(String studentFatherName) {
-		this.studentFatherName = studentFatherName;
 	}
 
 	public int getAmount() {
@@ -48,7 +39,7 @@ public class Dues {
 
 	@Override
 	public String toString() {
-		return "Dues [id=" + id + ", studentFatherName=" + studentFatherName + ", amount=" + amount + ", status="
+		return "Dues [id=" + id + ", amount=" + amount + ", status="
 				+ status + "]";
 	}
 }
