@@ -9,7 +9,6 @@ import javax.swing.border.EmptyBorder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.kush.coaching.entity.User;
-import com.kush.coaching.repository.UserRepository;
 import com.kush.coaching.service.LoginData;
 
 import javax.swing.JLabel;
@@ -42,9 +41,6 @@ public class LoginFrame extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public LoginFrame() {
 		setFont(new Font("Arial Black", Font.BOLD, 12));
 		setTitle("sign-in");
@@ -80,12 +76,16 @@ public class LoginFrame extends JFrame {
 				int id=Integer.parseInt(textField.getText());
 				String pwd=passwordField.getText();
 				
-				User user = new LoginData().meth(id,configContext);
+				User user = LoginData.meth(id,configContext);
 				
-				if(!(pwd.equals(user.getPassword()))) {
-						LoginDialog.passwordDialog(new LoginFrame());
-						textField.setText(null);
-						passwordField.setText(null);
+				if(pwd.equals(user.getPassword())) {
+					setVisible(false);
+					HomeFrame.studListFrame(configContext);
+				}				
+				else{
+					LoginDialog.passwordDialog(new LoginFrame());
+					textField.setText(null);
+					passwordField.setText(null);
 				}
 				
 			}
