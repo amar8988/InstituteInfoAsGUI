@@ -26,7 +26,7 @@ public class LoginData {
 	}
 	
 	public static List<StudentDetail> getStudents(ConfigurableApplicationContext configContext) {
-		List<StudentDetail> students = ((StudentRepository) configContext.getBean(StudentRepository.class)).findAll();
+		List<StudentDetail> students = (List<StudentDetail>) (configContext.getBean(StudentRepository.class)).findAll();
 		
 		return students;
 	}
