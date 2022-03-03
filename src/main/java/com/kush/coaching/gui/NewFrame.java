@@ -128,6 +128,9 @@ public class NewFrame extends JFrame {
 				
 				System.out.println(studentDetail);
 				LoginData.saveStudent(studentDetail, configContext);
+				
+				setVisible(false);
+				HomeFrame.studListFrame(configContext);
 			}
 		});
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 14));
