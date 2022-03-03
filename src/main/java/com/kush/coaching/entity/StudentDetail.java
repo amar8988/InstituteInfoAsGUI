@@ -25,11 +25,13 @@ public class StudentDetail {
 	private String course;
 	private String batch;
 	private String status;	//continue or left
-	@ElementCollection
-	@CollectionTable(name="pay_list",joinColumns=@JoinColumn(name=
-	  "student_id"))
-	@Column(name="pay_date")
-	private List<Date> payDates;
+	/*
+	 * @ElementCollection
+	 * 
+	 * @CollectionTable(name="pay_list",joinColumns=@JoinColumn(name= "student_id"))
+	 * 
+	 * @Column(name="pay_date") private List<Date> payDates;
+	 */
 	
 	public StudentDetail() {
 	}
@@ -106,18 +108,16 @@ public class StudentDetail {
 		this.status = status;
 	}
 
-	public List<Date> getPayDates() {
-		return payDates;
-	}
-
-	public void setPayDates(List<Date> payDates) {
-		this.payDates = payDates;
-	}
+	/*
+	 * public List<Date> getPayDates() { return payDates; }
+	 * 
+	 * public void setPayDates(List<Date> payDates) { this.payDates = payDates; }
+	 */
 
 	@Override
 	public String toString() {
 		return "StudentDetail [id=" + id + ", studentName=" + studentName + ", fatherName=" + fatherName
 				+ ", contactNumber=" + contactNumber + ", joiningDate=" + joiningDate + ", startingDate=" + startingDate
-				+ ", course=" + course + ", batch=" + batch + ", status=" + status + ", payDates=" + payDates + "]";
+				+ ", course=" + course + ", batch=" + batch + ", status=" + status + "]";// + ", payDates=" + payDates
 	}
 }
