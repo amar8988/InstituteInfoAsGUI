@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.kush.coaching.entity.StudentDetail;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -105,6 +108,22 @@ public class NewFrame extends JFrame {
 		textField_4.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Register");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				StudentDetail studentDetail = new StudentDetail();
+				
+				studentDetail.setStudentName(textField.getText());
+				studentDetail.setFatherName(textField_1.getText());
+				studentDetail.setJoiningDate(null);
+				studentDetail.setStartingDate(null);
+				studentDetail.setContactNumber(textField_2.getText());
+				studentDetail.setCourse(textField_3.getText());
+				studentDetail.setBatch(textField_4.getText());
+				studentDetail.setStatus("continue");
+				
+				System.out.println(studentDetail);
+			}
+		});
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		btnNewButton.setBounds(42, 266, 95, 21);
 		contentPane.add(btnNewButton);
