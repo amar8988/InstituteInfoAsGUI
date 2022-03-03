@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.kush.coaching.entity.StudentDetail;
+import com.kush.coaching.service.LoginData;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -126,6 +127,7 @@ public class NewFrame extends JFrame {
 				studentDetail.setStatus("continue");
 				
 				System.out.println(studentDetail);
+				LoginData.saveStudent(studentDetail, configContext);
 			}
 		});
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 14));
