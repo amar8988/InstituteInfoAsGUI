@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.springframework.context.ConfigurableApplicationContext;
+
 import com.kush.coaching.entity.StudentDetail;
 
 import javax.swing.JLabel;
@@ -24,8 +26,10 @@ public class NewFrame extends JFrame {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
+	private static ConfigurableApplicationContext configContext;
 
-	public static void main(String[] args) {
+	public static void register(ConfigurableApplicationContext context) {
+		configContext=context;
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -132,7 +136,7 @@ public class NewFrame extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				//HomeFrame.studListFrame(context);
+				HomeFrame.studListFrame(configContext);
 			}
 		});
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 14));
