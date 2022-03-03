@@ -30,4 +30,8 @@ public class LoginData {
 		
 		return students;
 	}
+	
+	public static StudentDetail saveStudent(StudentDetail studentDetail, ConfigurableApplicationContext configContext) {
+		return (configContext.getBean(StudentRepository.class)).save(studentDetail);
+	}
 }
