@@ -81,6 +81,7 @@ public class HomeFrame extends JFrame {
 		contentPane.add(btnNewButton_4);
 		
 		List<StudentDetail> students = LoginData.getStudents(configContext);
+		
 		DefaultTableModel model = (DefaultTableModel)table.getModel();
 		
 		Vector<String> colNames = new Vector<>();
