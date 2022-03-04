@@ -88,10 +88,18 @@ public class NewFrame extends JFrame {
 		lblNewLabel_3.setBounds(10, 110, 89, 27);
 		contentPane.add(lblNewLabel_3);
 		
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(126, 118, 108, 19);
+		contentPane.add(dateChooser);
+		
 		JLabel lblNewLabel_4 = new JLabel("Starting dt.");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_4.setBounds(10, 134, 99, 27);
 		contentPane.add(lblNewLabel_4);
+
+		JDateChooser dateChooser_1 = new JDateChooser();
+		dateChooser_1.setBounds(126, 142, 108, 19);
+		contentPane.add(dateChooser_1);
 		
 		JLabel lblNewLabel_5 = new JLabel("Course");
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -120,8 +128,8 @@ public class NewFrame extends JFrame {
 				
 				studentDetail.setStudentName(textField.getText());
 				studentDetail.setFatherName(textField_1.getText());
-				studentDetail.setJoiningDate(null);
-				studentDetail.setStartingDate(null);
+				studentDetail.setJoiningDate(dateChooser.getDate());
+				studentDetail.setStartingDate(dateChooser_1.getDate());
 				studentDetail.setContactNumber(textField_2.getText());
 				studentDetail.setCourse(textField_3.getText());
 				studentDetail.setBatch(textField_4.getText());
@@ -148,13 +156,5 @@ public class NewFrame extends JFrame {
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		btnNewButton_1.setBounds(190, 266, 85, 21);
 		contentPane.add(btnNewButton_1);
-		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(126, 118, 127, 19);
-		contentPane.add(dateChooser);
-		
-		JDateChooser dateChooser_1 = new JDateChooser();
-		dateChooser_1.setBounds(126, 142, 127, 19);
-		contentPane.add(dateChooser_1);
 	}
 }
