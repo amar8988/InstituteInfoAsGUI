@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import com.toedter.calendar.JDateChooser;
 
 public class NewFrame extends JFrame {
 
@@ -147,5 +148,13 @@ public class NewFrame extends JFrame {
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		btnNewButton_1.setBounds(190, 266, 85, 21);
 		contentPane.add(btnNewButton_1);
+		
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(126, 118, 127, 19);
+		contentPane.add(dateChooser);
+		
+		JDateChooser dateChooser_1 = new JDateChooser();
+		dateChooser_1.setBounds(126, 142, 127, 19);
+		contentPane.add(dateChooser_1);
 	}
 }
