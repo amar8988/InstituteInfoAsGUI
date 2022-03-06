@@ -12,10 +12,13 @@ import com.kush.coaching.entity.StudentDetail;
 import com.kush.coaching.service.LoginData;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
 import java.awt.event.ActionEvent;
 import com.toedter.calendar.JDateChooser;
 
@@ -128,8 +131,8 @@ public class NewFrame extends JFrame {
 				
 				studentDetail.setStudentName(textField.getText());
 				studentDetail.setFatherName(textField_1.getText());
-				studentDetail.setJoiningDate(dateChooser.getDate());
-				studentDetail.setStartingDate(dateChooser_1.getDate());
+				studentDetail.setJoiningDate(new SimpleDateFormat("dd-MM-yyyy").format(dateChooser.getDate()));
+				studentDetail.setStartingDate(new SimpleDateFormat("dd-MM-yyyy").format(dateChooser_1.getDate()));
 				studentDetail.setContactNumber(textField_2.getText());
 				studentDetail.setCourse(textField_3.getText());
 				studentDetail.setBatch(textField_4.getText());
@@ -137,6 +140,8 @@ public class NewFrame extends JFrame {
 				
 				System.out.println(studentDetail);
 				LoginData.saveStudent(studentDetail, configContext);
+				
+				JOptionPane.showMessageDialog(null, "Student registered successfully!!!");				
 				
 				setVisible(false);
 				HomeFrame.studListFrame(configContext);
