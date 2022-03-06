@@ -1,16 +1,9 @@
 package com.kush.coaching.entity;
 
-import java.util.Date;
-import java.util.List;
-
-import javax.persistence.CollectionTable;
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 
 @Entity
 public class StudentDetail {
@@ -20,8 +13,8 @@ public class StudentDetail {
 	private String studentName;
 	private String fatherName;
 	private String contactNumber;
-	private Date joiningDate;
-	private Date startingDate;
+	private String joiningDate;
+	private String startingDate;
 	private String course;
 	private String batch;
 	private String status;	//continue or left
@@ -68,19 +61,19 @@ public class StudentDetail {
 		this.contactNumber = contactNumber;
 	}
 
-	public Date getJoiningDate() {
+	public String getJoiningDate() {
 		return joiningDate;
 	}
 
-	public void setJoiningDate(Date joiningDate) {
+	public void setJoiningDate(String joiningDate) {
 		this.joiningDate = joiningDate;
 	}
 
-	public Date getStartingDate() {
+	public String getStartingDate() {
 		return startingDate;
 	}
 
-	public void setStartingDate(Date startingDate) {
+	public void setStartingDate(String startingDate) {
 		this.startingDate = startingDate;
 	}
 
